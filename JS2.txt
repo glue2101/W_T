@@ -1,0 +1,257 @@
+
+1 Design a webpage for validation of textbox. (Textbox must not be empty)
+
+<html>
+<head>
+    <title>Textbox Validation</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Textbox Validation</h1>
+        <form id="validationForm">
+            <div>
+                <label for="textbox">Enter Text:</label>
+                <input type="text" id="textbox" name="textbox">
+                <div class="error-message" id="error-message"></div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('validationForm').addEventListener('submit', function(event) {
+            const textboxValue = document.getElementById('textbox').value.trim();
+
+            if (textboxValue === '') {
+                event.preventDefault(); // Prevent form submission
+                document.getElementById('error-message').textContent = 'Textbox must not be empty.';
+            } else {
+                document.getElementById('error-message').textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+2. Design a webpage for validating input a number between 1 and 10.
+
+<!DOCTYPE html>
+<head>
+<title>Validation Number From 1 To 10</title>
+</head>
+<body>
+    <center>
+        <p><b>Validation of number between 1 to 10</b></p><br>
+        <form action="#" onsubmit="return validatingNumber()">
+            <b>checking TextBox :</b>
+            <input type="text" id="validating">
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </center>
+</body>
+<script>
+    function validatingNumber() {
+
+        let number = document.getElementById('validating').value;
+
+        if (isNaN(number) || number < 1 || number > 10) {
+            alert("The input must be a Number and in the range of 1 to 10");
+        }
+
+    }
+</script>
+</html>
+
+3. Design a webpage for showing alert box in 3 seconds using setTimeout function.
+
+<!DOCTYPE html>
+<head></head>
+<body>
+    <center>
+        <p><b>Showing alert box in 3 seconds using SetTimeOut function</b></p><br>
+        <b>Click to get the popup box after 3 seconds :</b>
+        <button onclick="setTimeOutfunc()">Click ME</button>
+    </center>
+</body>
+<script>
+    let timeout;
+    function setTimeOutfunc() {
+        timeout = setTimeout(greetingfunc, 3000);
+    }
+    function greetingfunc() {
+        alert("Have a Nice Day!")
+    }
+</script>
+</html>
+
+4. Design a webpage for counter using setTimeout and clearTimeout functions.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter with setTimeout and clearTimeout</title>
+</head>
+<body>
+    <h1>Counter with setTimeout and clearTimeout</h1>
+    <p>Click the "Start Counter" button to start the counter. Click the "Stop Counter" button to stop it.</p>
+    <button id="startButton">Start Counter</button>
+    <button id="stopButton">Stop Counter</button>
+    <p id="counterDisplay">Counter: <span id="counterValue">0</span></p>
+
+    <script>
+        let counterValue = 0;
+        let timer;
+
+        function startCounter() {
+            timer = setTimeout(function() {
+                counterValue++;
+                document.getElementById("counterValue").textContent = counterValue;
+                startCounter(); // Recursively call startCounter
+            }, 1000); // Update every 1 second (1000 milliseconds)
+        }
+
+        function stopCounter() {
+            clearTimeout(timer);
+        }
+
+        // Add click event listeners to start and stop buttons
+        document.getElementById("startButton").addEventListener("click", startCounter);
+        document.getElementById("stopButton").addEventListener("click", stopCounter);
+    </script>
+</body>
+</html>
+
+5. Design a Login Form containing User Name and password.  The password should contain max 8 characters.
+When user name and password match with predefined values, a welcome message should be displayed otherwise
+error message should be displayed.  Maximum 3 attempts should be allowed for wrong passwords otherwise 
+the application should end. [Use If]
+
+<html>
+<head><title>JS</title></head>
+
+<body>
+<h1>Validating user</h1>
+<form id="formcontainer">
+Name:<input type="text" id="fname" name="fname"><br>
+Password:<input type="password" id="pwd" name="pwd" max-length=8><br>
+<button type="button" onClick="myfunc()">Submit</button>
+</form>
+<h2 id="invaliduser"></h2>
+</body>
+
+<script>
+var sname = "user"
+var spwd = "12345678"
+var count = 0
+
+function myfunc(){
+var name = document.getElementById("fname").value;
+var pwd = document.getElementById("pwd").value;
+
+if (sname === name && spwd === pwd){
+	alert("Welcome User")
+}else{
+	alert("Sorry, username or password is invalid ")
+	count = count+1
+}
+if (count === 3){
+	alert("No attempts remaining!")
+	document.getElementById("formcontainer").style.display = "none"; 
+	document.getElementById("invaliduser").innerHTML = "Invalid User";
+	window.close();
+}
+}
+</script>
+
+</html>
+
+
+
+6. Add JavaScript validations in registration form. Name text field should not accept any digit, 
+age text field should not accept characters, perform validations on email on lost focus of text field.
+Empty fields should not be allowed.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form with Validations</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form with Validations</h1>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <p class="error-message" id="nameError"></p>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age">
+        <p class="error-message" id="ageError"></p>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <p class="error-message" id="emailError"></p>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+        const nameInput = document.getElementById("name");
+        const ageInput = document.getElementById("age");
+        const emailInput = document.getElementById("email");
+        const nameError = document.getElementById("nameError");
+        const ageError = document.getElementById("ageError");
+        const emailError = document.getElementById("emailError");
+
+        form.addEventListener("submit", function(event) {
+            let isValid = true;
+
+            // Validate Name (no digits allowed)
+            if (/\d/.test(nameInput.value)) {
+                nameError.textContent = "Name should not contain digits.";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            // Validate Age (only digits allowed)
+            if (!/^\d+$/.test(ageInput.value)) {
+                ageError.textContent = "Age should only contain digits.";
+                isValid = false;
+            } else {
+                ageError.textContent = "";
+            }
+
+            // Validate Email (basic email format)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.textContent = "Please enter a valid email address.";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Prevent form submission if there are validation errors
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+
+        // Perform email validation on lost focus
+        emailInput.addEventListener("blur", function() {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.textContent = "Please enter a valid email address.";
+            } else {
+                emailError.textContent = "";
+            }
+        });
+    </script>
+</body>
+</html>
