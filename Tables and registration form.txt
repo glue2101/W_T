@@ -1,0 +1,273 @@
+Tables :- 
+
+Data Communication
+
+<!DOCTYPE html> 
+<head></head> 
+<title>Table Data Communication </title> 
+<body> 
+<table> 
+<table border ="1" width ="450" height = "250" style = "border-collapse:collapse"> <tr> 
+<th colspan = "3" >Data Communication</th> 
+</tr> 
+<tr> 
+<td>Arthur</td> 
+<td>Name</td> 
+<td>Price</td> 
+</tr> 
+<tr> 
+<td rowspan = "2" >Behrouz <br>Forouzan</td> 
+<td> DCN</td><td>300/-</td> 
+</tr> 
+<tr> 
+<td>TCP-IP</td><td>350/-</td> 
+</tr> 
+<tr> 
+<td>Andrew<br> Tanebaum</td> 
+<td>Networking</td> 
+<td>400/-</td> 
+</tr> 
+<tr> 
+<td>William<br>Staling</td> 
+<td>Communication <br>and<br>Networking</td> 
+<td>400/-</td> 
+</tr> 
+<tr> 
+<td colspan = "2" ><br>Total Cost(Total 4 Books)<br></td> 
+<td>Rs.1450</td> 
+</tr> 
+</table> 
+</body> 
+</html>
+
+ ---------------------------------------------------------------------------------------
+
+Computer Sciencce
+
+<!DOCTYPE html> 
+<head></head> 
+<title>Computer Science</title> 
+<style></style> 
+<body> 
+<table> 
+<table border = "2" width = "350"style = "border-collapse:collapse"> 
+<tr> 
+<th colspan = "4"> Computer Science</th> 
+</tr> 
+<tr> 
+<th colspan ="3">No of Students</th> 
+<td rowspan = "3">Total<br><br><br><br>150</td> 
+</tr> 
+<tr> 
+<td>Year<br>2003</td> 
+<td>Year<br>2004</td> 
+<td>Year<br>2005</td> 
+</tr> 
+<tr> 
+<td>40</td> 
+<td>50</td> 
+<td>60</td> 
+</tr> 
+</table> 
+</body> 
+</html>
+
+---------------------------------------------------------------------------------------
+
+Telephone Bill
+
+<!DOCTYPE html> 
+<head></head> 
+<title>Telephone bill</title> 
+<body> 
+<table> 
+<table border="2" width="550" style="border-collapse:collapse"> <tr> 
+<th colspan="2">Subscriber's Name <br>and Address</th> <th colspan="2">Consumer No.</th> 
+<th colspan="4">P.O. Stamp</th> 
+</tr> 
+<tr> 
+<td colspan="2">Arun Nabar <br> 
+Crossing Roads <br> 
+Off Haji Ali Road., <br> 
+Mumbai 400 022.</td> 
+<td colspan="2">PL 0012345</td> 
+<td></td> 
+<td></td> 
+<td></td> 
+</tr> 
+<tr> 
+<td><B>Telephone <br> No. </B></td> 
+<td><B>Type</B></td> 
+<td colspan="2"><B>Bill Date</B></td> 
+<td colspan="2"><B>Due Date</B></td> 
+<td><B>Pay By Date</B></td> 
+</tr> 
+<tr> 
+<td>29750772</td> 
+<td>Gen. / <br> 
+Res. <br> 
+Permanent</td> 
+<td colspan="2">01- Mar-2004</td> 
+<td colspan="2">18-Mar-2004</td> 
+<td>25-Apr-2004</td> 
+</tr>
+<tr> 
+<td><B>Opening <br> 
+Meter <br> 
+Reading</B></td> 
+<td><B>Closing <br> 
+Meter <br> 
+Reading</B></td> 
+<td><B>Metered <br>Calls</B></td> <td><B>Debit <br> Calls</B></td> <td><B>Credit <br> Calls</B></td> <td><B>Free <br> Calls</B></td> <td><B>Chargeable<br> Calls</B></td> </tr> 
+<tr> 
+<td>1052</td> 
+<td>1297</td> 
+<td>245</td> 
+<td>0</td> 
+<td>0</td> 
+<td>150</td> 
+<td>95</td> 
+</tr> 
+<tr> 
+<td colspan="4"><B>DETAILS</B></td> <td><B>ITEM</B></td> 
+<td><B>PERIOD</B></td> 
+<td><B>AMOUNT</B></td> 
+</tr> 
+<tr> 
+<td><B>Rate</B></td> 
+<td><B>No. of <br>Calls</B></td> <td colspan="2"><B>Charge</B></td> <td><B>Rent</B></td> 
+<td>10/09/97 <br>to <br> 31/10/98</td> <td>200.00</td> 
+</tr> 
+<tr> 
+<td>0.80</td> 
+<td>95</td> 
+<td colspan="2">76</td> 
+<td><B>Item</B></td> 
+<td>16/05/97 <br>to <br> 15/07/97</td> <td>76.00</td> 
+</tr> 
+<tr> 
+<td colspan="2">Surcharge After <br> Pay- By- Date</td> 
+<td colspan="2">10</td>
+<td><B>TKP/PG <br> 
+Calls</B></td> 
+<td>16/05/97 <br>to <br> 15/07/97</td> 
+<td>0.00</td> 
+</tr> 
+<tr> 
+<td colspan="2">Amount On/ Before <br> 
+Pay- By- Date</td> 
+<td colspan="2">290</td> 
+<td><B>ITX <br> 
+Calls</B></td> 
+<td>16/05/97 <br>to <br> 15/07/97</td> 
+<td>0.00</td> 
+</tr> 
+<tr> 
+<td colspan="2">Amount After <br> 
+Pay- By- Date</td> 
+<td colspan="2">300</td> 
+<td><B>Misc.</B></td> 
+<td>TAX</td> 
+<td>14.00</td> 
+</tr> 
+<tr> 
+<td colspan="2"></td> 
+<td colspan="2"></td> 
+<td colspan="2"><B>TOTAL</B></td> 
+<td>290.00</td> 
+</tr> 
+<tr> 
+<td colspan="4"><B>Please pay before due date to avoid <br> Disconnection</B></td> 
+</tr> 
+<tr> 
+<td colspan="4"><B>E & O.E. <br> 
+Please See Overleaf For Codes/ <br> 
+Instructions</B></td> 
+<td colspan="3">Account Officer</td></tr> 
+</table> 
+</body> 
+</html>
+
+---------------------------------------------------------------------------------------
+
+Practical 2 --Registration form
+
+<!DOCTYPE html>
+<head></head>
+<title> Registration Form </title>
+<body style="background-color:#d9e0fd">
+<h1 align = "center" style="background-color:#d9fddd">Registration Form</h1>
+<hr>
+<form>
+<table align ="center">
+<h3 >
+<tr>
+<td>Name : </td>
+<td><input type="text" name="Name"></td>
+</tr>
+<tr>
+<td>Age : </td>
+<td><input type="text" name = "Age"></td>
+</tr>
+<td>Email ID: </td>
+<td><input type="email" name="email"</td>
+</tr>
+<tr>
+<td>Date of Birth :</td>
+<td><input type="text" name = "dateofbirth"</td>
+</tr>
+<tr>
+<td>Gender   :</td>
+<td><input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" value="fmale">Female
+    <input type="radio" name="gender" value="others">Others
+</td>
+</tr>
+<tr>
+<td>Hobbies :</td>
+<td><input type="checkbox" name="Hobbies" value="Cricket">Cricket<br>
+<input type="checkbox" name="Hobbies" value="Football">Football<br>
+<input type="checkbox" name="Hobbies" value="Kabadde">Kabaddi<br>
+<input type="checkbox" name="Hobbies" value="Others">Others</td>
+</tr>
+<tr>
+<td>Address :</td>
+<td><textarea rows="6" cols="66"></textarea></td>
+</tr>
+<tr>
+<td>Country :</td>
+<td><select Name="Countries" Size="1">  
+  <option value =" Australia">  Australia</option>  
+  <option value ="Brazil">Brazil </option>  
+  <option value ="Canada"> Canada</option>  
+  <option value ="Denmark"> Denmark</option>
+  <option value ="Egypt"> Egypt</option>
+  <option value ="Finland"> Finland</option>
+  <option value ="Greece"> Greece</option>
+  <option value ="Haiti"> Haiti</option>
+  <option value = "India"> India</option>  
+  <option value ="Japan"> Japan</option> 
+  <option value ="Kuwait"> Kuwait</option> 
+  <option value ="Laos"> Laos</option> 
+  <option value ="Mexico"> Mexico</option>
+  <option value ="New Zealand"> New Zealand</option>
+  <option value ="Peru"> Peru</option> 
+  <option value ="Russia"> Russia</option>
+  <option value ="Singapore"> Singapore</option>
+  <option value ="Turkey"> Turkey</option>
+  <option value ="USA"> USA</option>
+  <option value ="Vivetam"> Vivetnam</option>
+  <option value ="Yemen"> Yemen</option>
+<option value ="Zimbabwe">Zimbabwe</option>
+</select> </td>
+</tr>
+<tr>
+<td>Required Service :</td>
+<td><textarea rows="6" cols="66"></textarea></td>
+</tr>
+</table>
+<p align = "center"  ><input type="submit" value="Submit" style="background-color:#d9fddd"></p>
+</form>
+<hr>
+</body>
+</html>
