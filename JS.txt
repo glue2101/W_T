@@ -1,0 +1,115 @@
+
+
+1. Write a javascript code to find number is even or odd using prompt dialog box
+
+<html>
+<body>
+<h1> To find no is even or odd using prompt dialog box.</h1>
+<button onclick="myfunction()"> Enter a number</button>
+<p id="demo"></p>
+<script>
+function myfunction(){	
+let a = prompt("Enter a number : ","000");
+if (a%2==0){
+document.getElementById("demo").innerHTML="Number "+a+" is Even Number!!"
+}
+else{
+document.getElementById("demo").innerHTML="Number "+a+" is Odd Number!!"
+}
+}
+</script>
+</body>
+</html>
+
+2. Write a javascript code to find sum of first “n” numbers. Accept the value for n in prompt dialog box
+
+<html>
+<body>
+<h1>To find sum of first “n” numbers. Accept the value for n in prompt dialog box.</h1>
+<button onclick="myfunction()"> Enter a number</button>
+<p id="demo"></p>
+<script>
+function myfunction(){
+let a = prompt("Enter a number : ");
+let m=0;
+for (let i=0;i<=a;i++){
+m=m+i;
+document.getElementById("demo").innerHTML="Sum of numbers "+i+" is "+m+".";
+}
+}
+</script>
+</body>
+</html>
+
+3. Write a JavaScript code to find factorial of a given number
+
+<html>
+<body>
+<h1>To find factorial of a given number.</h1>
+<button onclick="myfunction()"> Enter a number</button>
+<p id="demo"></p>
+<script>
+	function myfunction(){
+	let a=prompt("Enter a number : ");
+let m=1;
+if(a==0){
+	document.getElementById("demo").innerHTML="The factorial of"+a+" is 1";
+}
+else{
+for(let i=1;i<=a;i++){
+m=m*i;
+document.getElementById("demo").innerHTML="The factorial of"+a+" is "+m+" !";
+}
+}
+}
+</script>
+</body>
+</html>
+
+4. Create a html page that accepts Principle Amount, No. of Years & Rate of Interest from 3 text fields, when you click
+“Calculate Interest” button, the data is sent to a function that returns the simple interest.  When you click on
+“Final Amount” button, the final amount by adding principle amount and interest should be displayed.  [ Use Functions]
+
+<!DOCTYPE html>
+<head>
+  <title>Interest Calculator</title>
+</head>
+<body>
+  <h1>Interest Calculator</h1>
+
+  <label for="principal">Principle Amount:</label>
+  <input type="number" id="principal" placeholder="Enter principle amount"><br><br>
+ 
+  <label for="years">No. of Years:</label>
+  <input type="number" id="years" placeholder="Enter number of years"><br><br>
+ 
+  <label for="rate">Rate of Interest:</label>
+  <input type="number" id="rate" placeholder="Enter rate of interest"><br><br>
+ 
+  <button onclick="calculateInterest()">Calculate Interest</button>
+  <button onclick="calculateFinalAmount()">Final Amount</button><br><br>
+ 
+  <p id="result"></p>
+
+  <script>
+    function calculateInterest() {
+      var principal = parseFloat(document.getElementById("principal").value);
+      var years = parseFloat(document.getElementById("years").value);
+      var rate = parseFloat(document.getElementById("rate").value);
+
+      var interest = (principal * years * rate) / 100;
+      document.getElementById("result").textContent = "Simple Interest: " + interest.toFixed(2);
+    }
+
+    function calculateFinalAmount() {
+      var principal = parseFloat(document.getElementById("principal").value);
+      var years = parseFloat(document.getElementById("years").value);
+      var rate = parseFloat(document.getElementById("rate").value);
+
+      var interest = (principal * years * rate) / 100;
+      var finalAmount = principal + interest;
+      document.getElementById("result").textContent = "Final Amount: " + finalAmount.toFixed(2);
+    }
+  </script>
+</body>
+</html>
