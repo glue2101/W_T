@@ -1,0 +1,273 @@
+A - Design registration form using HTML and retrieve form data using php.
+
+<html>
+<head>
+<title>Retrieving records </Title>
+</head>
+<body>
+<h2>User Registration</h2>
+<form name=f1 method=GET action="Retrieve.php">
+<pre>
+First Name: <input name="fn" type="text"><br/>
+Last Name : <input name="ln" type="text"><br/>
+Age : <input name="Age" type="text"><br/>
+Hometown : <input name="Ht" type="text"><br/>
+Mobile No : <input name="mn" type="text" maxlength=10><br/>
+<input type="Submit" value="Submit">
+</pre>
+</form>
+</body>
+</html>
+<?php
+ $fname=trim($_REQUEST["fn"]);
+ $lname=trim($_REQUEST["ln"]);
+ $Age=trim($_REQUEST["Age"]);
+ $Hometown=trim($_REQUEST["Ht"]);
+ $mobno=trim($_REQUEST["mn"]);
+echo "<H1> Retrieving Data from Server...<?h1>";
+echo "<table border='1'>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Age</th>
+<th>Hometown</th>
+<th>Mobile Number</th>
+</tr>";
+echo "<tr>";
+echo "<td>".$fname."</td>";
+echo "<td>".$lname."</td>";
+echo "<td>".$Age."</td>";
+echo "<td>".$Hometown."</td>";
+echo "<td>".$mobno."</td>";
+echo "</tr>";
+echo"</table>";
+?>
+
+create a table in mysql as follows:
+mysql> create database UserName;
+Query OK, 1 row affected (0.01 sec)
+mysql> use UserName;
+Database changed
+mysql> create table user1 (id Integer(2),firstname varchar(20),lastname varchar(20),Age 
+Integer(2),HomeTown varchar(20),Job varchar(20));
+
+
+
+
+B - Retrieve Employee Details/ Registration Details from the database using PHP
+<html>
+<head>
+<title> Practical 9Retrieve Employee Details/ Registration Details from 
+the database using PHP 
+</title>
+</head>
+<body>
+<center>
+<form method=get action="getuser.php">
+<input Type=textbox name="txtId">
+<input type="Submit" value="Submit">
+</form>
+<br />
+</center>
+</body>
+</html>
+getuser.php
+<?php
+$q=$_GET["txtId"];
+$con=mysql_connect('localhost','root','');
+if(!$con)
+ {
+die('Could not connect:'.mysql_error());
+ }
+mysql_select_db("db1",$con);
+ $sql="select * from register where ID='".$q."'";
+ $result=mysql_query($sql);
+echo "<table border='1'>
+<tr>
+<th>ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Age</th>
+<th>Hometown</th>
+<th>Mobile Number</th>
+</tr>";
+while($row=mysql_fetch_array($result))
+ {
+echo "<tr>";
+echo "<td>".$row['ID']."</td>";
+echo "<td>".$row['FName']."</td>";
+echo "<td>".$row['LName']."</td>";
+echo "<td>".$row['Age']."</td>";
+echo "<td>".$row['HomeTown']."</td>";
+echo "<td>".$row['MobileNo']."</td>";
+echo "</tr>";
+ }
+echo"</table>";
+mysql_close($con);
+?>
+
+
+C - Add, Modify and Delete data from client side into table in MySQL 
+<html>
+<head>
+<title> Practical 10</title>
+</head>
+<body>
+<h3>Login Form</h3>
+<form name=f1 method ="POST" action="login.php">
+<pre>
+Username:<input name="un" type="text"><br/>
+Password:<input name="ps" type="password"><br/>
+<input type="Submit" value="Login"><br>
+</form>
+<a href="insert.html">SignUp</a> <a href="update.html">Change 
+password</a> <a href="delete.html">Remove Account</a><br/>
+</pre>
+</body>
+</html>
+login.php
+<?php
+$con=mysql_connect('localhost','root','');
+ if(!$con)
+ {
+ die('could not connect:'.mysql_error());
+ }
+mysql_select_db("db1",$con);
+ $uname=trim($_REQUEST["un"]);
+ $p=trim($_REQUEST["ps"]);
+ $sql="Select * from login where Uname='".$uname."'and Pass='".$p."'";
+ $result=mysql_query($sql);
+ if(mysql_num_rows($result))
+{
+echo "<H1> Welcome you are a regitered User</h1>";
+}
+ else
+{
+echo "</H1>User Name Not FOund/Not a Registered User</h1>";
+}
+mysql_close($con);
+?>
+<html>
+<head>
+<title>Inserting Records /Adding Records</title>
+</head>
+<body>
+<h2>User Registration</h2>
+<form name=f1 method=POST action="insert.php">
+<pre>
+Username : <input name="un" type="text"><br/>
+Password : <input name="ps" type="password"><br/>
+<input type="Submit" value="Insert Records">
+</pre>
+</form>
+</body>
+</html>
+insert.php
+<?php
+ $con=mysql_connect('localhost','root','');
+ if(!$con)
+ {
+ die('could not connect:'.mysql_error());
+ }
+mysql_select_db("db1",$con);
+$uname=trim($_REQUEST["un"]);
+ $p=trim($_REQUEST["ps"]);
+ $sql1="Select * from login where Uname='".$uname."'and Pass='".$p."'";
+ $result=mysql_query($sql1);
+ if(!mysql_fetch_array($result))
+ {
+ $sql="Insert into login values ('".$uname."','".$p."')";
+ $r=mysql_query($sql);
+ echo "yes";
+ }
+ else
+ { 
+echo "no"; 
+}
+mysql_close($con);
+?>
+<html>
+<head>
+<title> Modifying/Update Record </title>
+</head>
+<body>
+<h2>Change Password</h2>
+<form name=f1 method=post action="update.php">
+<pre>
+Username : <input name="un" type="text"><br/>
+Current Password: <input name="ps" type="password"><br/>
+New Password: <input name="nps" type="password"><br/>
+<input type="Submit" value="Update Record">
+</pre>
+</form>
+</body>
+</html>
+update.php
+<?php
+$con=mysql_connect('localhost','root','');
+if(!$con)
+ {
+die('could not connect:'.mysql_error());
+ }
+mysql_select_db("db1",$con);
+ $uname=trim($_REQUEST["un"]);
+ $p=trim($_REQUEST["ps"]);
+ $np=trim($_REQUEST["nps"]);
+ $sql1="Update login set Pass='".$np."'whereUname='".$uname."'and Pass='".$p."'";
+ $result=mysql_query($sql1);
+ $s="Select * from login where Uname='".$uname."'and Pass='".$p."'";
+ $result=mysql_query($s);
+if(!mysql_fetch_array($result))
+ {
+echo "Password Changed";
+ }
+else
+ {
+echo "no"; 
+ }
+mysql_close($con);
+?>
+<html>
+<head>
+</head>
+<body>
+<h2>Deleting User</h2>
+<form name=f1 method=post action="delete.php">
+<pre>
+User Name: <input name="un" type="text"><br>
+Password: <input name="ps" type="password"><br>
+<input type="Submit" value="Delete">
+</pre>
+</form>
+</body>
+</html>
+delete.php
+<?php
+ $con=mysql_connect('localhost','root','');
+if(!$con)
+ {
+die('could not connect:'.mysql_error());
+ }
+mysql_select_db("db1",$con);
+ $uname=trim($_REQUEST["un"]);
+ $p=trim($_REQUEST["ps"]);
+$s1="Select * from login where Uname='".$uname."'and Pass='".$p."'";
+ $result1=mysql_query($s1);
+if(!mysql_fetch_array($result1))
+ {
+echo "Record could not be found or already Record Deleted";
+ }
+else
+{
+ $sql1="Delete from login where Uname='".$uname."'and Pass='".$p."'";
+ $result=mysql_query($sql1);
+ $s="Select * from login where Uname='".$uname."'and Pass='".$p."'";
+ $result=mysql_query($s);
+if(!mysql_fetch_array($result))
+ {
+echo "Record Deleted";
+ }
+ }
+mysql_close($con);
+?>
+
